@@ -483,21 +483,21 @@ function follows() {
 //备份抖音
 function utiszip() {
     logd("正在复制文...");
-    let copyCmd = "cp -rf /data/user/0/com.ss.android.ugc.aweme/ /sdcard/Download/com.ss.android.ugc.aweme/";
+    let copyCmd = "cp -rf /data/user/0/com.ss.android.ugc.aweme/ /sdcard/DCIM/com.ss.android.ugc.aweme/";
     agentEvent.execShellCommandEx(copyCmd);
     sleep(1000);
 
     logd("正在删除无用文件...");
-    let removeOfflineCmd = "rm -rf /sdcard/Download/com.ss.android.ugc.aweme/files/offlineX";
+    let removeOfflineCmd = "rm -rf /sdcard/DCIM/com.ss.android.ugc.aweme/files/offlineX";
     agentEvent.execShellCommandEx(removeOfflineCmd);
-    let removePluginsCmd = "rm -rf /sdcard/Download/com.ss.android.ugc.aweme/files/plugins";
+    let removePluginsCmd = "rm -rf /sdcard/DCIM/com.ss.android.ugc.aweme/files/plugins";
     agentEvent.execShellCommandEx(removePluginsCmd);
     sleep(1000);
 
     logd("正在压缩文件...");
-    let zipFile = "/sdcard/Download/" + deviceID + ".zip";
+    let zipFile = "/sdcard/DCIM/" + deviceID + ".zip";
     let passwd = "";
-    let files = ["/sdcard/Download/com.ss.android.ugc.aweme"]
+    let files = ["/sdcard/DCIM/com.ss.android.ugc.aweme"]
     let re = utils.zip(zipFile, passwd, files);
     logd("压缩结果: " + re);
 
