@@ -27,28 +27,28 @@ function startDyTask() {
             sleep(10000)
         }
     }else if(readConfigString("browser")==="true"){
-        // if(readConfigString("state")==='2'){
-        //     //运行模式是测试的时候，选择浏览器试试抖音备份
-        //     logd("执行备份抖音任务");
-        //     utiszip();
-        // }else {
-        //     logd("浏览器留痕任务");
-        //     while (true){
+        if(readConfigString("state")==='2'){
+            //运行模式是测试的时候，选择浏览器试试抖音备份
+            logd("执行备份抖音任务");
+            utiszip();
+        }else {
+            logd("浏览器留痕任务");
+            while (true){
 
-        //         chrome_secuid();//浏览器留痕代码，循环访问10个
+                chrome_secuid();//浏览器留痕代码，循环访问10个
 
-        //         sleep(10000)
-        //     }
-        // }
-        logd("抖音关注");
-        while (true){
-            actionNum=0;
-            startDy("首页");
-
-            open_uid();//抖音关注，循环关注10个
-
-            sleep(10000)
+                sleep(10000)
+            }
         }
+        // logd("抖音关注");
+        // while (true){
+        //     actionNum=0;
+        //     startDy("首页");
+
+        //     open_uid();//抖音关注，循环关注10个
+
+        //     sleep(10000)
+        // }
     }else if(readConfigString("jiaqun")==="true"){
         if(readConfigString("state")==='2'){
             //运行模式是测试的时候，选择加群是抖音恢复
